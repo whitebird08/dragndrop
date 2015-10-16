@@ -3,24 +3,13 @@ extends layout
 block content
   h1(style='background-color:black; color:white;') Tasks
   #tasks 
-    h2 Health
-    div
-      ul
-        li healthy List item one
-        li healthy List item two
-        li healthy List item three
-    h2 Wealth
-    div
-      ul
-        li wealthy List item one
-        li wealthy List item two
-        li wealthy List item three
-    h2 Soul
-    div
-      ul
-        li soulful List item one
-        li soulful List item two
-        li soulful List item three
+    for item in allCategories
+      h2= item.category
+      div
+        ul
+          for item in allCategories
+            //if item.category = h2 category
+            li= item.description
 
   h1(style='background-color:black; color:white;') Daily Plan
   #plan
