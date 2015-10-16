@@ -35,5 +35,24 @@ $(document).ready(function() {
     $( "#sortable" ).disableSelection();
   });
 
+  $.ajax({
+    type: 'GET',
+    url: '/tasks',
+    success:function(data){
+      $.each(data, function(i, item){
+        if(item.category === 'health')
+        $(".classHealth").append('<li>' + item.description + '</li>')
+      })
+      $.each(data, function(i, item){
+        if(item.category === 'wealth')
+        $(".classWealth").append('<li>' + item.description + '</li>')
+      })
+      $.each(data, function(i, item){
+        if(item.category === 'soul')
+        $(".classSoul").append('<li>' + item.description + '</li>')
+      })
+    }
+  })
+
 
 })

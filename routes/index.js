@@ -16,4 +16,12 @@ router.get('/', function(req, res, next) {
 
 });
 
+router.get('/tasks', function(req, res, next) {
+  taskCollection.find({}, function(err, data){
+    console.log(data, 'DATAAAAAAA')
+    res.json(data);
+  })
+
+});
+
 module.exports = router;
